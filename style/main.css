@@ -1,0 +1,139 @@
+vp-app.vote-config .window-content {
+  overflow-y: auto;
+}
+vp-app.vote-config .app-cont {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+vp-app.vote-config .options {
+  min-height: 50%;
+  flex: 1;
+  overflow: auto;
+}
+vp-app.vote-config .option {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+vp-app.vote-config .option .text {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+vp-app.vote-config .option details {
+  flex: 1;
+}
+vp-app.vote-config .option details textarea {
+  width: 100%;
+}
+vp-app.vote-config .option:nth-of-type(odd) {
+  border: 3px solid rgba(252, 0, 63, 0.3647058824);
+}
+vp-app.vote-config .controls {
+  display: flex;
+  justify-content: space-between;
+}
+vp-app.vote-config .controls label {
+  display: grid;
+  place-content: center;
+}
+vp-app.vote-config .controls .self-vote {
+  display: flex;
+}
+
+vp-app.vp-booth .window-content {
+  margin: 0;
+  padding: 0;
+}
+vp-app.vp-booth .ballot-cont {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+vp-app.vp-booth .ballot-cont .vote-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+vp-app.vp-booth .ballot-cont .description {
+  padding: 0.5rem;
+  height: 20%;
+}
+vp-app.vp-booth .ballot-cont .option-cont {
+  height: 65%;
+  overflow: auto;
+}
+vp-app.vp-booth .ballot-cont .option-cont .option {
+  display: flex;
+  padding: 0 0.5rem;
+}
+vp-app.vp-booth .ballot-cont .option-cont .option .text-cont {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+vp-app.vp-booth .ballot-cont .option-cont .option .title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+vp-app.vp-booth .ballot-cont .option-cont .option:nth-child(odd) {
+  background-color: rgba(255, 0, 85, 0.3215686275);
+}
+vp-app.vp-booth .control-cont {
+  display: grid;
+  place-items: center;
+}
+vp-app.vp-booth .control-cont input {
+  margin: 0;
+}
+vp-app.vp-booth .controls {
+  display: flex;
+  justify-content: space-between;
+}
+vp-app.vp-booth .controls .spacer {
+  flex: 1;
+}
+
+#vp-results .window-content {
+  padding: 0.2rem;
+}
+#vp-results .main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#vp-results .main .title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+#vp-results .main .description {
+  height: 20%;
+}
+#vp-results .main .results-cont {
+  flex: 1;
+  min-height: 50%;
+  overflow: auto;
+}
+#vp-results .controls {
+  display: flex;
+}
+#vp-results .controls .spacer {
+  flex: 1;
+}
+#vp-results .blink {
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0% {
+    background-color: rgba(61, 77, 63, 0);
+  }
+  50% {
+    background-color: rgba(0, 141, 47, 0.3019607843);
+  }
+  100% {
+    background-color: #008d2f;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

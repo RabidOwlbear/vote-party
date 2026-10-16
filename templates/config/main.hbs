@@ -1,0 +1,47 @@
+<div class='app-cont'>
+
+  <div class='title'>
+    <input type='text' name='title' placeholder='Vote Title' value='{{title}}' />
+  </div>
+  <div class='description'>
+    <label for='description'>Description (Optional):</label>
+    <prose-mirror name='description' toggled='true' data-placeholder='Add Description' data-document-uuid='{{uuid}}' value='{{description}}'>
+      {{{description}}}
+    </prose-mirror>
+  </div>
+  <div class='options'>
+    <div class='controls'>
+      <label for=''>Add Options</label>
+      <a class='add-option'><i class='fas fa-plus'></i></a>
+    </div>
+    <div class='options-container'>
+      {{#each voteOptions as |opt idx|}}
+      {{log opt}}
+        <div class='option' data-uuid='{{opt.uuid}}'>
+          <div class="text">
+            <div class='option-header'>
+              <input type='text' class='option-text' value='{{opt.text}}' />
+            </div>
+            <details {{#if opt.expanded}}open{{/if}}>
+              <summary>
+              </summary>
+              <textarea class='option-description' rows='3' cols='45' placeholder='Enter description'>
+            {{opt.description}}
+              </textarea>
+            </details>
+          </div>
+          <a class='delete'>
+            <i class='fas fa-solid fa-rectangle-xmark'></i>
+          </a>
+        </div>
+      {{/each}}
+    </div>
+    {{!-- {{log this}} --}}
+  </div>
+  <div class="controls">
+    <div class="self-vote">
+      <label for="selfvote">Caller gets vote:</label><input type="checkbox" name="selfvote" id="selfvote">
+    </div>
+    <button class="vote">Call Vote!</button>
+  </div>
+</div>

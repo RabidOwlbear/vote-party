@@ -1,0 +1,5 @@
+style/scss/main.scss
+style/scss/vote-booth.scss
+style/scss/vote-config.scss
+style/scss/vote-result.scss
+compilecss.sh

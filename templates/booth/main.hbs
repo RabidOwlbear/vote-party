@@ -1,0 +1,27 @@
+<div class="ballot-cont">
+
+  <div class="vote-title">{{data.title}}</div>
+  <div class="description">{{{data.description}}}</div>
+  <div class="option-cont">
+    {{#each data.options as |opt idx|}}
+      <div class="option">
+        <div class="text-cont">
+          <div class="title">{{opt.text}}</div>
+          <details>
+            <summary>
+            </summary>
+            <div class="description">{{opt.description}}</div>
+          </details>
+        </div>
+        <div class="control-cont">
+          <input type="radio" name="response" id="{{opt.uuid}}" data-uuid="{{opt.uuid}}" class="select">
+        </div>
+        
+      </div>
+      {{/each}}
+  </div>
+  <div class="controls">
+    <div class="spacer"></div>
+    <button class="submit">Vote!</button>
+  </div>
+</div>
