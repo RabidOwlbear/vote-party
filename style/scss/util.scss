@@ -1,0 +1,19 @@
+//control injection
+#players-active{
+  position: relative
+}
+.relative{
+  position: relative;
+}
+.vote-config-btn{
+  position: absolute;
+  background-color: #00696d;
+  left: 205px;
+  height: 2rem;
+  width: 2rem;
+  border-radius: .5rem;
+  i{
+    color:beige;
+    font-size: 1.25rem;  
+  }
+}

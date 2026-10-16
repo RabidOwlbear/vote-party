@@ -5,7 +5,16 @@
    
   </div>
   <div class="controls">
-    <div class="spacer"></div>
+    {{#if isComplete}}
+      {{#if isCaller}}
+        <button class="recall-btn">Re-call Vote</button>
+      {{else}}
+        <div class="spacer"></div>
+      {{/if}}
+    {{else}}
+      <div class="spacer"></div>
+    {{/if}}
+    
     <button class="close">Close</button>
   </div>
 </div>

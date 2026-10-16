@@ -66,7 +66,6 @@ export const socket = {
   },
   refreshResults: function (data) {
     const app = foundry.applications.instances.get('vp-results');
-    // console.log("FUCK YOU", data,  app.data.uuid == data.uuid)
     if (app && app.data.uuid == data.uuid) {
      
       app.data = data;
@@ -74,7 +73,6 @@ export const socket = {
     }
   },
   handleResultsRefresh: function (data) {
-    console.log('----------------------------------------------------------------------', data);
     const vote = VP.votes.find((i) => i.uuid == data.uuid);
     // if (vote.object.caller == game.user.uuid) {
     VP.socket.emit({
@@ -87,40 +85,3 @@ export const socket = {
   // }
 };
 
-// function handleResultsRefresh(data) {
-//   console.log('----------------------------------------------------------------------', data);
-//   const vote = VP.votes.find((i) => i.uuid == data.uuid);
-//   // if (vote.object.caller == game.user.uuid) {
-//   console.log('vote', vote);
-//   VP.socket.emit({
-//     type: 'refresh-results',
-//     data: vote
-//   });
-//   refreshResults(vote);
-
-//   // }
-// }
-
-// function refreshResults(data) {
-//   const app = foundry.applications.instances.get('vp-results');
-//   // console.log("FUCK YOU", data,  app.data.uuid == data.uuid)
-//   if (app && app.data.uuid == data.uuid) {
-//     app.data = data;
-//     app.render();
-//   }
-// }
-
-// async function submitVote(uuid, user, vote) {
-//   const bucket = VP.votes.find((i) => i.uuid == uuid);
-//   if (!bucket) {
-//     ui.notifications.warn(`Vote uuid: ${uuid} not found.`);
-//     return;
-//   }
-//   const existing = bucket.votes.find((i) => i.user == user);
-//   if (existing) {
-//     ui.notifications.warn('User has already voted in this voting round.');
-//     return;
-//   }
-//   bucket.votes.push({ user, vote: vote });
-//   VP.socket.emit({ type: 'refresh-results', data: bucket });
-// }

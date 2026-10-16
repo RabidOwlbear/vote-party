@@ -49,7 +49,6 @@ export class VoteBooth extends VPApplication {
 
   async _submitVote(){
     const inputs = [...this.element.querySelectorAll('input.select')];
-    console.log('submit vote',this.data.type, this.data);
     switch(this.data.type){
       case 'single':
         const pick = inputs.find(i=>i.checked);
@@ -70,7 +69,6 @@ export class VoteBooth extends VPApplication {
        
         new VP.app.VoteResults({data: this.vote}).render(true);
         await util.sleep(500);
-        console.log('fuck off', this.vote)
         VP.socket.emit({type: 'refresh-request', data: this.vote})
         this.close()
     }

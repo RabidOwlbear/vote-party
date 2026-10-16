@@ -40,4 +40,23 @@ Hooks.on('init', ()=>{
   socket.registerSocket()
 
 
+
+  Hooks.on('renderPlayers', e=>{
+    console.log('ready')
+    if(game.user.isGM){
+    const users = document.getElementById('players-active');
+    const btn = document.createElement('button');
+    const icon = document.createElement('i');
+    icon.classList.add('fa-solid','fa-ballot')
+    btn.classList.add('vote-config-btn');
+    btn.title= "New Vote"
+    users.classList.add("relative");
+    btn.addEventListener('click', e=>{
+      new VP.app.VoteConfigApp().render(true)
+    })
+    btn.appendChild(icon);
+    users.appendChild(btn);
+  }
+  })
+
 })

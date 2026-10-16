@@ -17,10 +17,8 @@ export const util = {
       return;
     }
     bucket.votes.push({ user, vote: vote });
-    console.log(VP.votes);
   },
   tallyVote: function(data){
-    console.log('tallyvote', data, data?.object?.title)
     // const data = data//VP.votes.find(i=>i.uuid == uuid);
     if(!data || !data.object)return
     const result = {
@@ -48,7 +46,6 @@ export const util = {
       return 0
     }
     })
-    console.log(result)
     return result
   },
   sleep: (ms) => new Promise((res) => setTimeout(res, ms))

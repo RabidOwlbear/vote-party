@@ -117,6 +117,7 @@ vp-app.vp-booth .controls .spacer {
 }
 #vp-results .controls {
   display: flex;
+  justify-content: space-between;
 }
 #vp-results .controls .spacer {
   flex: 1;
@@ -134,6 +135,27 @@ vp-app.vp-booth .controls .spacer {
   100% {
     background-color: #008d2f;
   }
+}
+
+#players-active {
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}
+
+.vote-config-btn {
+  position: absolute;
+  background-color: #00696d;
+  left: 205px;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.5rem;
+}
+.vote-config-btn i {
+  color: beige;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -76,7 +76,7 @@ export class VoteConfigApp extends VPApplication {
 
     optionNames.forEach((nameInp) => {
       nameInp.addEventListener('change', (e) => {
-        const containerState = e.target.closest('details').open;
+        const containerState = e.target.closest('details')?.open;
         const uuid = e.target.closest('.option').dataset.uuid;
         const option = this.data.options.find((i) => i.uuid == uuid);
         option.text = e.target.value.trim();
@@ -154,7 +154,6 @@ export class VoteConfigApp extends VPApplication {
   }
 
   _callVote() {
-    console.log(this.data);
     this.data.users = util.addUsers(this.data.caller, this.data.callerVote)
     const voteData = {
       uuid: this.data.uuid,
@@ -176,7 +175,6 @@ export class VoteConfigApp extends VPApplication {
     }else{
        new VP.app.VoteResults({ data: voteData }).render(true);
     }
-    console.log("data",voteData)
     this.close();
   }
 }
