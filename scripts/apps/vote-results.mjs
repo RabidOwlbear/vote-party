@@ -100,7 +100,7 @@ export class VoteResults extends VPApplication {
     const winCount = '';
   }
   _completeCheck() {
-    console.log('complete check', this.data);
+
     if (this.data.object.complete) return;
     if (this.data.object.callerVote) {
       console.log(this.data.object.users.length, this.data.votes.length);
@@ -116,7 +116,6 @@ export class VoteResults extends VPApplication {
     }
   }
   async _reCallVote() {
-    console.log('fuck off assfuck')
     const obj = await foundry.utils.deepClone(this.data);
     obj.votes = [];
     VP.votes = VP.votes.filter(i=>i.uuid!=obj.uuid)
